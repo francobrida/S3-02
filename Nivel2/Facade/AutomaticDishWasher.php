@@ -3,7 +3,10 @@
 class AutomaticDishWasher {
 
     public function __construct(
-        protected DishWasher $dishwasher
+        protected Grabber $firstModule,
+        protected Soaper $secondModule,
+        protected Rinser $thirdModule,
+        protected Placer $fourthModule
     ){}
 
     public function putTablet() {
@@ -11,10 +14,11 @@ class AutomaticDishWasher {
     }
 
     public function pressOn() {
-        $this->dishwasher->takePiece();
-        $this->dishwasher->soap();
-        $this->dishwasher->rinse();
-        $this->dishwasher->placeInDryer();
+        echo "I'm pressing the ON button.\n";
+        $this->firstModule->takePiece();
+        $this->secondModule->soap();
+        $this->thirdModule->rinse();
+        $this->fourthModule->placeInDryer();
     }
 
 }
