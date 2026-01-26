@@ -4,11 +4,11 @@ require_once 'CarCouponGenerator.php';
 require_once 'BmwCouponGenerator.php';
 require_once 'MercedesCouponGenerator.php';
 
-$couponBmw = New CouponManager(New BmwCouponGenerator(), true, false);
-echo $couponBmw->getCoupon() . "\n";
+$coupon = New CouponManager(New BmwCouponGenerator(), true, false);
+echo $coupon->getCoupon() . "\n";
 
-$couponMercedes = New CouponManager(New MercedesCouponGenerator(), false, true);
-echo $couponMercedes->getCoupon() . "\n";
+$coupon->setGenerator(New MercedesCouponGenerator(), false, true);
+echo $coupon->getCoupon() . "\n";
 
 ?>
 

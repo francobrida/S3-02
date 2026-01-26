@@ -4,6 +4,9 @@ class BmwCouponGenerator implements CarCouponGenerator {
 
     private int $discount = 0;
 
+    public function cleanDiscount(): void {
+        $this->discount = 0;
+    }
     public function addSeasonDiscount(bool $isHighSeason): void {
         if ($isHighSeason){$this->discount += 5;}
     }
