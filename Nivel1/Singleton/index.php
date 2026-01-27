@@ -1,11 +1,12 @@
 <?php
 require_once 'Tigger.php';
 
-$tigger = Tigger::getInstance();
+$tigger1 = Tigger::getInstance();
+$tigger2 = Tigger::getInstance();
 
 for ($i = 0; $i < 5; $i++){
-   $tigger->roar();
+   $tigger1->roar();
 }
 
-echo $tigger->getCounter();
+echo $tigger2->getCounter();
 

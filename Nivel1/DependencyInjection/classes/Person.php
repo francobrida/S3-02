@@ -3,19 +3,19 @@
 class Person {
 
     public function __construct(
-        private Wallet $wallet,
-        private HouseKeys $keys,
-        private CommuteTool $commute,
-        private Smartphone $phone
+        private ?PaymentMethod $paymentMethod = null,
+        private ?AccessTool $keys = null,
+        private ?CommuteType $commute = null,
+        private ?CommunicationDevice $phone = null
     ){}
     
     public function goOut() : string {
-        if ($this->wallet === null  || $this->keys === null || $this->commute === null || $this->phone === null) {
+        if ($this->paymentMethod === null  || $this->keys === null || $this->commute === null || $this->phone === null) {
             return "Aren't you missing something?...";
-        } // I just realized this validation may be useless since the constructor claims all dependencies to be provided. Anyway... 
+        } 
 
-        return "I have my " . $this->wallet->getName() . ", my " 
-        . $this->keys->getKeys() . ", my " . $this->commute->getType()->name 
+        return "I have my " . $this->paymentMethod->getName() . ", my " 
+        . $this->keys->getKeys() . ", my " . $this->commute->name 
         . " and my " . $this->phone->getModel() . ". I'm ready to go!";
         
     }
