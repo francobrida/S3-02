@@ -1,5 +1,7 @@
 <?php
-require_once 'poultry.php';
+require_once 'Duck.php';
+require_once 'Turkey.php';
+require_once 'TurkeyAdapter.php';
 
 function duck_interaction($duck) {
        $duck->quack();
